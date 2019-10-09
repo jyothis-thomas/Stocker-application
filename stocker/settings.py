@@ -150,7 +150,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'Stocker Team <noreply@stocker.com>'
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.django.CompressedStaticFilesStorage'
 PROJECT_ROOT   =   os.path.join(os.path.abspath(__file__))
 STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
