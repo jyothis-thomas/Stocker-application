@@ -84,10 +84,10 @@ WSGI_APPLICATION = 'stocker.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'jyothisdb',
-        'USER': 'jyothis',
-        'PASSWORD': 'jyothis1@',
-        'HOST': 'localhost',
+        'NAME': 'dcrob8f3ko2ruk',
+        'USER': 'jmgufsejodrcyh',
+        'PASSWORD': 'f8f2237a0b4843c64e376e7f13068a1b452d59da2c6bdceabf6fcfd1156d2742',
+        'HOST': 'ec2-107-20-193-199.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
