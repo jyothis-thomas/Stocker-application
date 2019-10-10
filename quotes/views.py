@@ -97,7 +97,7 @@ def delete_stock(request):
 def news(request):
     import requests
     import json
-    main_url = " https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=4dbc17e007ab436fb66416009dfb59a8"
+    main_url = " https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=3d414a52d86c431bbd60cdc6cee48fff"
     open_bbc_page = requests.get(main_url).json() 
     newsdata=[]
     linkdata=[]
@@ -105,7 +105,8 @@ def news(request):
         article = {
                     'a': open_bbc_page["articles"][i]['title'],
                     'url': open_bbc_page['articles'][i]['url'],
-                    'image': open_bbc_page['articles'][i]['urlToImage']
+                    'image': open_bbc_page['articles'][i]['urlToImage'],
+                    'details': open_bbc_page['articles'][i]['description'],
                     }
         newsdata.append(article)
     context={'newsdata': newsdata} 
