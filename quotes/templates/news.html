@@ -14,32 +14,17 @@
                     
                     <p>&emsp;{{article.details}}</p>
                     <br/>
-                    <a href="{{article.url}}" style="position: absolute; bottom: 0pt; right: 0pt">
+                    <a href="{{article.url}}" target="_blank" style="position: absolute; bottom: 0pt; right: 0pt">
                          
                          <p>Read more..</p>
                     </a>
                </div>
                <div class="col-sm-2">
-                    <!-- <a href="{{article.url}}">
-                         <br/>
-                         <p>Learn more..</p>
-                    </a> -->
+                    
                </div>
           </div>
           <hr>
-          <!-- <div class="col-sm-3" style="margin: 2%;background-image:linear-gradient(rgba(500,500,500,.5), rgba(500,500,500,.5)),url('{{article.image}}');background-size: 100% 100%;border-radius: 2% 2%;">
-               <div class="content" style="justify-content:center;font-family: 'Josefin Sans', sans-serif;padding:10%" >
-                                   <p>
-                                   <span class="subtitle">{{article.a}} </span>
-                                   <br>
-                                   </p>
-               </div>
-               <div style="position: absolute; bottom: 0pt; right: 0pt">
-               <a href="{{article.url}}">
-                    <p>Learn more..</p>
-                    </a>
-               </div>
-          </div> -->
+          
      {% endfor %}
 </div>
 {% endblock content %}

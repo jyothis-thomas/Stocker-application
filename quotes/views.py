@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from . models import Stock
-from . forms import StockForm
+from . forms import StockForm, Editprofile
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -111,3 +111,15 @@ def news(request):
         newsdata.append(article)
     context={'newsdata': newsdata} 
     return render(request, 'news.html', context)
+
+@login_required
+def edit(request):
+    if request.method == 'POST':
+        form = Editprofile(request.POST,instance=request.user)
+        if form.is_valid():
+            form.save()
+            print("valid")
+            return redirect('profile')
+    else:
+        form = Editprofile(instance=request.user)
+    return render(request, 'edit.html', { 'form': form })
