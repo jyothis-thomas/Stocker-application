@@ -32,13 +32,13 @@ def home(request):
             except Exception as e:
                 api = "Error.. Make sure you have entered a correct ticker"
         return render(request, 'homepage.html', {'ticker':ticker, 'output':output})
-
+@login_required
 def about(request):
     return render(request, 'about.html', {})
-
+@login_required
 def profile(request):
     return render(request, 'profile.html', {})
-
+@login_required
 def add_stock(request):
     import requests
     import json
@@ -83,17 +83,17 @@ def add_stock(request):
             return render(request, 'add_stock.html', {'ticker':ticker, 'output':output})
         else:
             return render(request, 'add_stock.html', {'ticker':ticker})
-
+@login_required
 def delete(request, stock_id):
     item = Stock.objects.get(pk=stock_id)
     item.delete()
     messages.success(request, ("Stock has been deleted"))
     return redirect(delete_stock)
-    
+@login_required    
 def delete_stock(request):
     ticker = Stock.objects.filter(user=request.user)
     return render(request, 'delete_stock.html', {'ticker': ticker})
-
+@login_required
 def news(request):
     import requests
     import json
