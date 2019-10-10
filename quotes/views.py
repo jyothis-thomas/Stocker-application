@@ -104,7 +104,8 @@ def news(request):
     for i in range(20):
         article = {
                     'a': open_bbc_page["articles"][i]['title'],
-                    'url': open_bbc_page['articles'][i]['url']
+                    'url': open_bbc_page['articles'][i]['url'],
+                    'image': open_bbc_page['articles'][i]['urlToImage']
                     }
         newsdata.append(article)
     context={'newsdata': newsdata} 
