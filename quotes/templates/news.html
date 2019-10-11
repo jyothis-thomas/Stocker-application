@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h1><b>Top B-NEWS of the hour</b></h1>
+<h1><b>Top Business-NEWS of the hour</b></h1>
 
      {% for article in newsdata %}
           <div class="row" style="padding: 1%; min-height: 137px">
@@ -26,5 +26,26 @@
           <hr>
           
      {% endfor %}
+
+     <div class="pagination" >
+          <ul style="margin-left: 40%">
+               
+               {% if newsdata.has_previous %}
+               <li style="display:inline-flex"><a href="?page={{ newsdata.previous_page_number }}" style="color:black"> <b><</b> &nbsp</a></li>
+               {% endif %}
+               {% for pg in newsdata.paginator.page_range %}
+               {% if newsdata.number == pg %}
+     <a href="?page={{ pg }}" style="color:black"><b>{{ pg }}</b></a>
+          
+               {% endif %}
+               {% endfor %}
+               {% if newsdata.has_next %}
+               <li style="display:inline-flex"><a href="?page={{ newsdata.next_page_number }}" style="color:black"> &nbsp <b>></b>  </a></li>
+               {% endif %}
+          </ul>
+          <br/>
+          <br/>
+          <br/>
+</div>
 </div>
 {% endblock content %}

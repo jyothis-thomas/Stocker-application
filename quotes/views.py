@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.db import transaction
+from django.core.paginator import Paginator
 
 @login_required
 def home(request):
@@ -109,6 +110,15 @@ def news(request):
                     'details': open_bbc_page['articles'][i]['description'],
                     }
         newsdata.append(article)
+    paginator=Paginator(newsdata,5)
+    try:
+        page = int(request.GET.get('page','1'))
+    except:
+        page = 1
+    try:
+        newsdata = paginator.page(page)
+    except(EmptyPage, InvalidPage):
+        newsdata=paginator.page(paginator.num_pages)
     context={'newsdata': newsdata} 
     return render(request, 'news.html', context)
 
