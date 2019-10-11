@@ -35,9 +35,6 @@ urlpatterns = [
         ),
         name='change_password'
     ),
-
-    path('', TemplateView.as_view(template_name='home.html'), name='home'),
-
     path('password-reset/',
          auth_views.PasswordResetView.as_view(
              template_name='commons/password-reset/password_reset.html',
