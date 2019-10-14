@@ -1,28 +1,26 @@
 {% extends 'base2.html' %}
 
 {% block content %}
-<h3>Your profile</h3>
-<table class="table table-borderless">
-    <tbody>
-      <tr>
-        <th scope="row">Username</th>
-        <td>{{ user.username }}</td>
-      </tr>
-      <tr>
-        <th scope="row">First name</th>
-        <td>{{ user.first_name }}</td>
-      </tr>
-      <tr>
-        <th scope="row">Last name</th>
-        <td colspan="2">{{ user.last_name }}</td>
-      </tr>
-      <tr>
-          <th scope="row">Email</th>
-          <td colspan="2">{{ user.email }}</td>
+  <h3>Your profile</h3>
+  <table class="table table-borderless">
+      <tbody>
+        <tr>
+          <th scope="row">Username</th>
+          <td>{{ user.username }}</td>
         </tr>
-    </tbody>
-  </table>
-
-  <a href="{% url 'edit' %}" onclick="clickAndDisable(this);" class="btn btn-secondary">Edit profile</a>
-
+        <tr>
+          <th scope="row">First name</th>
+          <td>{{ user.first_name }}</td>
+        </tr>
+        <tr>
+          <th scope="row">Last name</th>
+          <td colspan="2">{{ user.last_name }}</td>
+        </tr>
+        <tr>
+            <th scope="row">Email</th>
+            <td colspan="2">{{ user.email }}</td>
+          </tr>
+      </tbody>
+    </table>
+    <a href="{% url 'edit' %}" onclick="clickAndDisable(this);" class="btn btn-secondary">Edit profile</a>
 {% endblock content %}

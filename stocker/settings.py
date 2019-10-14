@@ -143,16 +143,12 @@ LOGOUT_REDIRECT_URL = 'home1'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'xxxxx'
-EMAIL_HOST_PASSWORD = 'xxxx'
+EMAIL_HOST_USER = 'tactist.player@gmail.com'
+EMAIL_HOST_PASSWORD = 'tactist_player1@'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'Stocker Team <noreply@stocker.com>'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-# PROJECT_ROOT   =   os.path.join(os.path.abspath(__file__))
-# STATICFILES_DIRS = (
-#     os.path.join(PROJECT_ROOT, 'static'),
-# )
 PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
 STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')

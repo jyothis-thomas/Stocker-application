@@ -3,7 +3,6 @@
 {% block content %}
 
 <h1><u><b>Top Business-NEWS of the hour</b></u></h1>
-
      {% for article in newsdata %}
           <div class="row" style="padding: 1%; min-height: 137px">
                <div class="col-sm-3">
@@ -11,23 +10,19 @@
                </div>
                <div class="col-sm-7">
                     <h5><b>{{article.a}}</b></h5>
-                    
                     <p>&emsp;{{article.details}}</p>
                     <br/>
                     <a href="{{article.url}}" target="_blank" style="position: absolute; bottom: 0pt; right: 0pt">
-                         
-                         <p>Read more..</p>
+                    <p>Read more..</p>
                     </a>
                </div>
-               <div class="col-sm-2">
-                    
+               <div class="col-sm-2">                   
                </div>
           </div>
           <hr>     
      {% endfor %}
      <div class="pagination" style="padding-bottom: 3%;">
-          <ul style="margin-left: 40%">
-               
+          <ul style="margin-left: 40%">               
                {% if newsdata.has_previous %}
                     <li style="display:inline-flex"><a href="?page={{ newsdata.previous_page_number }}" style="color:black"> <b><</b> &nbsp</a></li>
                {% endif %}

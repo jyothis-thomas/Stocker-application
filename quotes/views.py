@@ -133,3 +133,18 @@ def edit(request):
     else:
         form = Editprofile(instance=request.user)
     return render(request, 'edit.html', { 'form': form })
+
+
+# def delete_user(request, username):
+#     context = {}
+
+#     try:
+#         u = User.objects.get(username=username)
+#         u.delete()
+#         context['msg'] = 'The user is deleted.'       
+#     except User.DoesNotExist: 
+#         context['msg'] = 'User does not exist.'
+#     except Exception as e: 
+#         context['msg'] = e.message
+
+#     return render(request, 'template.html', context=context)
